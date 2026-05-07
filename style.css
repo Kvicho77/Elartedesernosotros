@@ -1,0 +1,481 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1b120d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 1s ease;
+}
+
+.texto-intro {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  color: #f3d8c7;
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+background: radial-gradient(circle, #3a2a1d, #1b120d);
+  height: 93vh;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.book {
+  position: relative;
+  width: 310px;
+  height: 900px;
+  perspective: 4000px;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  transition:  transform 1.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255,255,255,0.25), rgba(255,255,255,0));
+  border-radius: 0 12px 12px 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.page.flipped {
+  transform: rotateY(-140deg) rotateZ(-4deg) skewY(2deg);
+  pointer-events: none;
+}
+
+.page.flipped.hide {
+  opacity: 0;
+}
+
+.page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));
+  filter: blur(8px);
+  transition: opacity 1s ease;
+}
+
+.page.flipped::after {
+  opacity: 1;
+}
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 5px solid #8b6b45;
+  background: linear-gradient(135deg, #f2e2b8, #d8b97e);
+  color: #4a2f1b;
+  padding: 40px;
+  box-shadow:
+    inset 0 0 30px rgba(90, 50, 20, 0.25),
+    inset 0 0 8px rgba(255,255,255,0.2),
+    0 0 15px rgba(0,0,0,0.3);
+}
+
+.front::before,
+.back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/old-paper.png');
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #e7cf9a, #caa46d);
+}
+
+.cover {
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #4a2305;
+  overflow: hidden;
+}
+
+.cover-image {
+  width: 350 px; 
+  height: 445px; 
+  margin-left: -38px;
+  margin-top:   3px ;
+  object-fit: contain;
+}
+
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.content h2 {
+  font-size: 25px;
+  margin-top: -26px;
+  margin-left: -18px;
+  margin-bottom: 9px;
+  border-bottom: 2px solid rgba(90, 50, 20, 0.4);
+  padding-bottom: 6px;
+  width: 100%;
+  text-align: left;
+  font-family: "Playfair Display", serif;
+}
+
+.content p {
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: justify;
+  text-align-last:left ;
+  margin-left: -16px;
+  font-family: "Cormorant Garamond", serif
+  
+}
+
+.only-content-p {
+   font-size: 12px;
+   margin-top: -9px;
+   line-height: 1.5;
+   text-align: justify;
+   text-align-last:left ;
+   margin-left: -16px;
+   font-family: "Cormorant Garamond", serif
+}
+
+.page-number {
+  position: absolute;
+  bottom: 20px;
+  right: 21px;
+  font-size: 16px;
+  color: rgba(60, 35, 15, 0.8);
+  font-style: italic;
+}
+
+#historia-de-amor{
+color: rgb(147, 15, 15);
+font-family:'Times New Roman', Times, serif ;
+font-size: 15px;
+}
+
+#ella{
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: justify;
+  text-align-last:left ;
+  margin-left: 0px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+
+}
+
+
+
+
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+background: radial-gradient(circle, #3a2a1d, #1b120d);
+  height: 93vh;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.book {
+  position: relative;
+  width: 310px;
+  height: 900px;
+  perspective: 4000px;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  transition:  transform 1.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255,255,255,0.25), rgba(255,255,255,0));
+  border-radius: 0 12px 12px 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.page.flipped {
+  transform: rotateY(-140deg) rotateZ(-4deg) skewY(2deg);
+  pointer-events: none;
+}
+
+.page.flipped.hide {
+  opacity: 0;
+}
+
+.page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));
+  filter: blur(8px);
+  transition: opacity 1s ease;
+}
+
+.page.flipped::after {
+  opacity: 1;
+}
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 5px solid #8b6b45;
+  background: linear-gradient(135deg, #f2e2b8, #d8b97e);
+  color: #4a2f1b;
+  padding: 40px;
+  box-shadow:
+    inset 0 0 30px rgba(90, 50, 20, 0.25),
+    inset 0 0 8px rgba(255,255,255,0.2),
+    0 0 15px rgba(0,0,0,0.3);
+}
+
+.front::before,
+.back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/old-paper.png');
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #e7cf9a, #caa46d);
+}
+
+.cover {
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #4a2305;
+  overflow: hidden;
+}
+
+.cover-image {
+  width: 300 px; 
+  height: 481px; 
+  margin-left: -43px;
+  margin-top:   -1px ;
+  object-fit: contain;
+}
+
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.content h2 {
+  font-size: 25px;
+  margin-top: -26px;
+  margin-left: -18px;
+  margin-bottom: 9px;
+  border-bottom: 2px solid rgba(90, 50, 20, 0.4);
+  padding-bottom: 6px;
+  width: 100%;
+  text-align: left;
+  font-family: "Playfair Display", serif;
+}
+
+.content p {
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: justify;
+  text-align-last:left ;
+  margin-left: -16px;
+  font-family: "Cormorant Garamond", serif
+  
+}
+
+.only-content-p {
+   font-size: 12px;
+   margin-top: -9px;
+   line-height: 1.5;
+   text-align: justify;
+   text-align-last:left ;
+   margin-left: -16px;
+   font-family: "Cormorant Garamond", serif
+}
+
+.page-number {
+  position: absolute;
+  bottom: 20px;
+  right: 21px;
+  font-size: 16px;
+  color: rgba(60, 35, 15, 0.8);
+  font-style: italic;
+}
+
+#cita{
+color: rgb(147, 15, 15);
+font-family:'Great Vibes', cursive ;
+font-size: 15px;
+}
+
+#ella{
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: justify;
+  text-align-last:left ;
+  margin-left: 0px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+
+}
+
+#foto-pagina14{
+  width: 278px;
+  margin-left: -11.5px;
+  margin-top: 12px;
+  border: 4px solid transparent #3c2304;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  opacity: 0.97;
+}
+
+#foto-pagina16{
+  width: 200px;
+  height: 200px;
+  margin-left: 20px;
+  margin-top: 12px;
+  border: 4px solid transparent #3c2304;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  opacity: 0.97;
+}
+
+#foto-pagina181{
+  width: 235px;
+  height: 150px;
+  margin-left: 10px;
+  margin-top: 12px;
+  border: 4px solid transparent #3c2304;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  opacity: 0.97;
+}
+#foto-pagina182{
+  width: 235px;
+  height: 150px;
+  margin-left: 10px;
+  margin-top: 12px;
+  border: 4px solid transparent #3c2304;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  opacity: 0.97;
+}
+
+#foto-pagina21{
+  width: 235px;
+  height: 165px;
+  margin-left: 5px;
+  margin-top: 12px;
+  border: 4px solid transparent #3c2304;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  opacity: 0.97;
+}
+
+#foto-pagina22{
+  width: 235px;
+  height: 165px;
+  margin-left: 5px;
+  margin-top: 12px;
+  border: 4px solid transparent #3c2304;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  opacity: 0.97;
+}
+
+#citafinal{
+color: rgb(147, 15, 15);
+font-family:'Great Vibes', cursive ;
+font-size: 15px;
+margin: 100px -20px;
+display: block;
+}
